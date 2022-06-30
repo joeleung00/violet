@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.learn.translation.deepLearnEnglish;
+
+option java_multiple_files = true;
+option java_package = "com.learn.translation.deepLearnEnglish.grpc";
+option java_outer_classname = "TranslationProto";
+option objc_class_prefix = "TLP";
+
+
+service TranslationService {
+	rpc translateVocab(VocabRequest) returns (ExplainResponse) {}
+
+	rpc translateText(TextRequest) returns (TextResponse) {}
+}
+
+
+message VocabRequest{
+	string vocab = 1;
+}
+
+message ExplainResponse{
+	string text = 1;
+}
+
+message TextRequest{
+	string text = 1;
+}
+
+message TextResponse{
+	string input = 1;
+	string output = 2;
+}
