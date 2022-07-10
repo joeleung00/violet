@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package com.learn.translation.deepLearnEnglish;
+package com.learn.translation.violet;
 
 option java_multiple_files = true;
-option java_package = "com.learn.translation.deepLearnEnglish.grpc";
+option java_package = "com.learn.translation.violet.grpc";
 option java_outer_classname = "TranslationProto";
 option objc_class_prefix = "TLP";
 
