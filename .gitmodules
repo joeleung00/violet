@@ -1,0 +1,3 @@
+[submodule "src/violet-frontend"]
+	path = src/violet-frontend
+	url = https://github.com/joeleung00/violet-frontend.git
