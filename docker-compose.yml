@@ -1,0 +1,33 @@
+version: '3'
+services:
+    violet:
+        build: ./
+        environment:
+          - VIOLET_USER=${VIOLET_USER}
+          - VIOLET_PASS=${VIOLET_PASS}
+        ports:
+          - 8080:8080
+        depends_on:
+          - db
+    db:
+        image: postgres:14.1-alpine
+        restart: always
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_DB=violet
+          - POSTGRES_PASSWORD=postgres
+        ports:
+          - 5432:5432
+        volumes:
+          - db:/var/lib/postgresql/data
+    translate:
+        build: ./translationService
+        environment:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/keys/keyfile.json
+        ports:
+          - 50051:50051
+        volumes:
+          - ${GCP_KEY_PATH}:/tmp/keys/keyfile.json:ro
+volumes:
+    db:
+      driver: local
