@@ -1,7 +1,12 @@
 # Violet
 This project is for learning purpose. It covers: 
-Frontend: Javascript and Vue
-Backend: Java, Spring Boot, gRPC for Java
+### Frontend
+- Javascript
+- Vue
+### Backend
+- Java
+- Spring Boot
+- gRPC (Java <=> Python)
 
 ## What this project do
 For English learning
